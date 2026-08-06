@@ -1,0 +1,22 @@
+{
+  "name": "vfs-groups-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bash scripts/run-dev.sh",
+    "dev:prepare": "npm run dev:database && npm run seed --prefix server",
+    "dev:client": "npm run dev:vite --prefix client",
+    "dev:database": "bash scripts/ensure-local-mongodb.sh",
+    "build": "npm run build --prefix client",
+    "lint": "npm run lint --prefix client && npm run lint --prefix server",
+    "test": "npm run test --prefix client && npm run test --prefix server",
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

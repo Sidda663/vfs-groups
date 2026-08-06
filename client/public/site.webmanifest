@@ -1,0 +1,12 @@
+{
+  "name": "VFS Groups",
+  "short_name": "VFS Groups",
+  "description": "Financial-service application assistance and guidance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f9fa",
+  "theme_color": "#073b4c",
+  "icons": [
+    { "src": "/brand/vfs-groups-logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

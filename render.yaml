@@ -1,0 +1,51 @@
+services:
+  - type: web
+    name: vfs-groups-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: COOKIE_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: EMAIL_PROVIDER
+        value: mock
+      - key: SMS_PROVIDER
+        value: mock
+      - key: MOCK_OTP_DISPLAY
+        value: true
+      - key: AI_PROVIDER
+        value: gemini
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.5-flash
+      - key: GEMINI_FALLBACK_MODEL
+        value: gemini-3.1-flash-lite
+      - key: INITIAL_ADMIN_NAME
+        sync: false
+      - key: INITIAL_ADMIN_EMAIL
+        sync: false
+      - key: INITIAL_ADMIN_MOBILE
+        sync: false
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false

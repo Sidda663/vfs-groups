@@ -1,0 +1,361 @@
+VFS GROUPS ADMIN PANEL - SIMPLE USER GUIDE
+==========================================
+
+This document explains the admin panel features that are currently implemented
+and connected to the Express APIs and MongoDB data.
+
+
+1. WHERE IS THE ADMIN PANEL?
+----------------------------
+
+Admin sign-in page:
+
+    https://YOUR-WEBSITE.netlify.app/admin/sign-in
+
+The public website also has an "Admin portal" link near the bottom of the footer.
+Admin is intentionally not shown in the normal Customer/Contractor sign-in page.
+
+After a successful admin login, the website opens:
+
+    /admin/dashboard
+
+There is no public admin registration page. The initial administrator is created
+from the INITIAL_ADMIN_* environment variables stored privately in Render.
+
+Use the registered admin email or mobile number and password to sign in.
+Never save the admin password in this document, GitHub, or frontend variables.
+
+
+2. HOW ADMIN SIGN-IN WORKS
+--------------------------
+
+1. Open the Admin portal from the website footer.
+2. Enter the registered admin email/mobile and password.
+3. The backend verifies the credentials and confirms that the account has an
+   authorized admin role.
+4. A valid admin is sent to the protected Admin dashboard.
+5. A customer or contractor account cannot open an admin page.
+6. Use "Sign out" in the dashboard header when finished.
+
+Security currently includes:
+
+- Role-protected admin routes
+- Rate-limited login requests
+- Secure HTTP-only authentication cookies in production
+- CSRF protection for admin changes
+- Required reasons for important account and application changes
+- Audit records for important administrative actions
+
+
+3. MAIN ADMIN NAVIGATION
+------------------------
+
+The admin workspace has these main navigation links:
+
+- Operations
+- Applications
+- Gallery manager
+- View website
+- Sign out
+
+
+4. OPERATIONS - OVERVIEW
+------------------------
+
+The Overview tab shows live totals from MongoDB:
+
+- Service enquiries
+- Public applications
+- Registered users
+- Customers
+- Contractors
+- Successful logins
+- Unique users who logged in
+- Referred registrations
+- Direct registrations
+- Referral codes
+- Service referrals
+
+It also shows:
+
+- Applications grouped by status
+- Most-used referral codes
+- Top referring customers
+- Top referring contractors
+
+The cards and tables are live data, not static dashboard numbers.
+
+
+5. CUSTOMER DIRECTORY
+----------------------
+
+Open Operations -> Customers.
+
+The admin can:
+
+- Search customers by name, email, mobile, or referral code
+- View name, email, mobile, city, state and account status
+- See referral code and registration/login activity totals
+- Use pagination when there are many customers
+- Open "More details" for the complete customer record
+
+Inside a customer record, the admin can view:
+
+- Customer ID
+- Full name
+- Email and mobile
+- Country, state and city
+- Account and onboarding status
+- Referral code
+- Who referred the customer
+- Registration and verification dates
+- First and last login dates
+- Users registered through the customer's referral code
+- Service referrals submitted by the customer
+- Successful login history, including IP and device information
+
+Allowed customer changes:
+
+- Correct the full name
+- Correct country, state and city
+- Make portal access Active or Suspended
+- Remove portal access with a required reason and confirmation
+
+The admin cannot edit the customer's email, mobile, referral code, applications,
+service referrals or login history.
+
+Removing an account blocks portal access and removes it from the active directory.
+Its financial applications, referrals and audit history remain preserved.
+
+
+6. CONTRACTOR DIRECTORY
+------------------------
+
+Open Operations -> Contractors.
+
+It works like the Customer directory and also shows contractor-specific details,
+including:
+
+- Contractor ID
+- Business name
+- Contractor referral code
+- Registrations made through the contractor's code
+- Service referrals submitted by the contractor
+- Login activity
+
+Allowed contractor changes:
+
+- Correct full name
+- Correct business name
+- Correct country, state and city
+- Make portal access Active or Suspended
+- Remove portal access with a required reason and confirmation
+
+Email, mobile, referral code and user-owned activity remain read-only.
+
+
+7. SERVICE ENQUIRIES / CALLBACK REQUESTS
+----------------------------------------
+
+Open Operations -> Service enquiries.
+
+This section receives callback requests from:
+
+- The homepage callback form
+- The quick "Request a call" form on each service page
+
+The admin can:
+
+- Search by customer name or mobile number
+- Filter by status
+- See the selected service and received date
+- Click the mobile number to start a phone call
+- Change the enquiry status to:
+  - New
+  - Scheduled
+  - Completed
+  - Cancelled
+
+
+8. FULL APPLICATIONS
+---------------------
+
+Open the Applications navigation link.
+
+Completed submissions from the public Apply page appear here automatically.
+Saved customer drafts remain private and do not appear until they are submitted.
+
+The admin can:
+
+- Search by application ID, lead ID, applicant name or mobile
+- Filter applications by status
+- Use pagination
+- Open and manage an application
+- View applicant contact and location
+- View selected service
+- View employment type and requested amount
+- View referral code or Direct registration
+- View the complete status history
+
+The admin can publish a new application status with:
+
+- New status
+- Customer-visible note
+- Internal admin note
+- Required reason for the change
+
+Available stages include Submitted, New, Contacted, Under Internal Review,
+Additional Information Required, Submitted to Provider, Under Provider Review,
+Approved, Rejected, Disbursed/Policy Issued, Closed and Cancelled.
+
+The public note is available through the secure customer tracking journey.
+The internal note is for administrative records.
+
+Document upload/review is not part of the current website flow because document
+coordination is handled in person.
+
+
+9. SERVICE REFERRALS
+---------------------
+
+Open Operations -> Service referrals.
+
+The admin can:
+
+- Search by referral ID, applicant, submitter or referral code
+- Filter by Customer or Contractor
+- Filter by status
+- Filter by From and To dates
+- View applicant, submitter, role, code, service, date and status
+- See referral submission volume grouped by user
+- Open the submitter's user details
+
+Service-referral records are currently read-only in the admin interface.
+
+
+10. REFERRAL CODE DETAILS
+--------------------------
+
+Click a referral code from the Overview or a user record.
+
+The admin can see:
+
+- Referral-code owner
+- Number of registrations produced
+- Number of service referrals submitted
+- Complete registrations made using the code
+- Applicant and service details for the owner's service referrals
+
+
+11. RECENT ACTIVITY
+--------------------
+
+Open Operations -> Recent activity.
+
+Separate tabs show:
+
+- Recent registrations
+- Recent successful logins
+- Recent service referrals
+
+This helps the admin quickly understand new website activity.
+
+
+12. GALLERY MANAGER
+--------------------
+
+Open Gallery manager.
+
+The admin can:
+
+- Select a picture or video from the computer
+- Drag and drop a file into the upload area
+- Preview the selected file
+- Upload it directly to the website gallery
+- Drag gallery items to change their public order
+- Move media first, up, down or last using buttons
+- Hide media from the public website
+- Show hidden media again
+- Permanently delete gallery media after confirmation
+
+Supported pictures:
+
+- JPG
+- PNG
+- WebP
+- Maximum 8 MB
+
+Supported videos:
+
+- MP4
+- WebM
+- MOV
+- Maximum 60 MB
+
+No title or description is required. A successful upload becomes visible on the
+public Gallery page. Uploaded media uses the configured backend storage provider.
+
+
+13. WHERE EACH WEBSITE ACTION APPEARS
+-------------------------------------
+
+Homepage callback form
+    -> Operations -> Service enquiries
+
+Service-page "Request a call" form
+    -> Operations -> Service enquiries
+
+Complete Apply form
+    -> Applications
+
+Customer registration
+    -> Operations -> Customers
+
+Contractor registration
+    -> Operations -> Contractors
+
+Customer/contractor referral submission
+    -> Operations -> Service referrals
+
+Registration using a referral code
+    -> User details and Referral code details
+
+Admin gallery upload
+    -> Public website Gallery page
+
+
+14. FEATURES NOT CURRENTLY AVAILABLE IN THE ADMIN UI
+-----------------------------------------------------
+
+The current admin interface does not provide:
+
+- Public admin registration
+- Creation of additional administrators
+- Admin role and permission management
+- Password changes for other users
+- Editing customer/contractor email or mobile
+- Editing referral codes
+- Editing submitted applications or user-owned referrals
+- Online document collection or document review
+- Service catalogue editing
+- FAQ/legal-page editing from the visible admin navigation
+- Payment or subscription management
+- Automatic email, SMS or WhatsApp delivery controls
+
+These should not be described to users as active admin features until they are
+implemented and tested.
+
+
+15. IMPORTANT ADMIN PRACTICES
+------------------------------
+
+- Never share admin credentials publicly.
+- Keep Render INITIAL_ADMIN_* values private.
+- Use a strong production password instead of a temporary password.
+- Sign out after using the dashboard on a shared computer.
+- Enter a clear reason when suspending/removing accounts or changing application
+  statuses.
+- Do not remove a user only because an application was rejected.
+- Confirm gallery publishing permission before uploading customer media.
+- Remember that final approvals and terms belong to the relevant provider.
+

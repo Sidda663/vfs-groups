@@ -1,0 +1,114 @@
+VFS GROUPS WEBSITE - SIMPLE LOAN APPLICATION GUIDE
+
+IMPORTANT: THERE ARE TWO DIFFERENT OPTIONS
+
+Yes—this is the correct customer flow, 
+
+
+Apply directly → complete application goes to Admin → Applications.
+Request a call → name/mobile/service goes to Admin → Service enquiries.
+
+
+
+1. ASK VFS GROUPS TO CALL ME
+
+The small form shown on a service page asks only for your name and mobile number.
+This is not a complete loan application.
+
+After you submit it:
+- Your request is saved securely.
+- It appears under "Service enquiries" in the VFS admin panel.
+- The VFS team can see your name, mobile number and selected service.
+- The team will call you and change the request status to New, Scheduled, Completed or Cancelled.
+
+
+2. APPLY NOW
+
+Use this when you want to send a complete application.
+
+You can apply for:
+- Personal loan
+- Business loan
+- Home loan
+- Loan against property
+- New or used car loan
+- Education loan
+- Loan against shares
+- Working capital finance
+- Insurance services
+- Investment services
+
+How to apply:
+
+1. Open the VFS Groups website.
+2. Click the yellow "Apply now" button at the top.
+3. Choose the loan or service you need.
+4. Enter your personal details, including name, mobile, Gmail address, date of birth and location.
+5. Enter your work and financial details.
+6. Enter the amount you need and briefly explain your requirement.
+7. Enter a referral code only if you have one. You can leave it empty.
+8. Read and accept the consent statements.
+9. Click "Submit application".
+
+After submitting:
+- The website gives you an application ID, such as VFS-APP-2026-000001.
+- It also gives you a lead ID and shows the first status.
+- Save or take a screenshot of the application ID.
+- The application appears in the Applications section of the VFS admin panel.
+- The VFS team checks whether the information is complete.
+- This first submission is not a loan approval or loan offer.
+
+How to track the application:
+
+1. Click "Track application" on the website.
+2. Enter your application ID and the same mobile number used in the form.
+3. Enter the 6-digit verification code sent to your mobile.
+4. You can then see the current status and status history.
+5. If the VFS team asks for documents, you can upload PDF, JPG or PNG files from this secure tracking page.
+
+
+SIMPLE EXAMPLE - APPLYING FOR A USED CAR LOAN
+
+Ravi wants a used car loan of Rs. 5,00,000.
+
+Option A - Ravi wants to speak first:
+1. Ravi opens Services.
+2. He opens "New & Used Car Loans".
+3. He enters only his name and mobile number.
+4. He clicks "Ask VFS Groups to call me".
+5. VFS receives the callback request and calls Ravi.
+
+Option B - Ravi wants to submit a complete application:
+1. Ravi clicks "Apply now".
+2. He chooses "New & Used Car Loans".
+3. He enters his personal and location details.
+4. He selects Salaried or Self-employed.
+5. He enters his income, existing EMI and requested amount of Rs. 5,00,000.
+6. He writes: "I need finance to buy a used car."
+7. He accepts the consent statements and submits the application.
+8. Ravi receives an application ID and saves it.
+9. VFS sees the application in the admin panel and reviews it.
+10. Ravi uses Track application with his application ID, mobile number and verification code.
+11. If documents are requested, Ravi uploads them securely from the tracking page.
+12. The relevant bank or NBFC makes the final approval and decides the interest rate and other loan terms.
+
+
+THE TWO CUSTOMER OPTIONS NOW SHOWN ON EACH SERVICE PAGE
+
+1. "Apply for this loan" or "Apply for this service"
+   This opens the complete secure application with the selected service already chosen.
+   The submitted details appear under Applications in the VFS admin panel.
+
+2. "Request a call about this loan" or "Request a call about this service"
+   This asks only for the customer's name and mobile number.
+   The request appears under Service enquiries in the VFS admin panel.
+
+After a callback request, the customer can choose:
+- Wait for our call
+- Complete application now
+
+After a complete application is submitted, the website shows:
+- Application submitted -> VFS review -> Documents, if requested -> Provider decision
+- Download ID option
+- Share on WhatsApp option
+- Track application option
