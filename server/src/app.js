@@ -5,7 +5,7 @@ import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
-import { env, isAllowedOrigin } from './config/env.js';
+import { allowedOrigins, env, isAllowedOrigin } from './config/env.js';
 import { ApiError } from './utils/apiError.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 import { requestContext } from './middleware/requestContext.js';
@@ -27,7 +27,19 @@ export function createApp() {
   app.set('trust proxy', 1);
   app.use(requestContext);
   app.use(helmet({ contentSecurityPolicy: env.NODE_ENV === 'production' }));
-  app.use(cors({ origin(origin, callback) { if (isAllowedOrigin(origin)) callback(null, true); else callback(new ApiError(403, 'ORIGIN_NOT_ALLOWED', 'This website is not allowed to access the API.')); }, credentials: true }));
+  app.use(cors({
+    origin(origin, callback) {
+      console.log("Incoming Origin:", origin);
+      console.log("Allowed Origins:", allowedOrigins);
+
+      if (isAllowedOrigin(origin)) {
+        callback(null, true);
+      } else {
+        callback(new ApiError(403, "ORIGIN_NOT_ALLOWED", "Origin not allowed"));
+      }
+    },
+    credentials: true,
+  }));
   app.use(express.json({ limit: '1mb', verify(request, _response, buffer) {
     if (request.originalUrl === '/api/v1/payments/razorpay/webhook') request.rawBody = Buffer.from(buffer);
   } }));
